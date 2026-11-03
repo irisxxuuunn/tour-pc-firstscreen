@@ -66,21 +66,16 @@ html[lang=en] .rt6h{flex-direction:column;gap:8px !important} /* 英文字長，
 .bm7{display:flex;justify-content:flex-end}
 .bmore7{font-size:12px;line-height:16px;font-weight:600;color:var(--n7);text-decoration:underline;cursor:pointer}
 .pcs7{display:flex;flex-direction:column;gap:12px;width:100%}
-body.ver-v8 .pcs7{gap:16px}
 .pc7{position:relative;display:flex;gap:12px;padding:12px;width:100%;border:1px solid var(--n4);border-radius:8px;background:#fff;text-align:left;color:var(--n10);cursor:pointer;transition:border-color .15s,background .15s}
 .pc7:hover:not(.dis):not(.on){border-color:var(--cyan-6)}
 .pc7.on{background:var(--cyan-1);border-color:var(--cyan-6)}
 .pc7.a{flex-direction:column;align-items:stretch;justify-content:center}
-.pc7.b{flex-direction:column;gap:8px;align-items:flex-start;justify-content:center}
 .pc7.sold{flex-direction:column;align-items:flex-start;justify-content:center;cursor:not-allowed}
-.pc7.b.sold{background:var(--n1)}
 .l7{display:flex;flex-direction:column;gap:8px}
 .nb7{display:flex;flex-direction:column;gap:6px}
 .dl7{display:block;height:1px;background:repeating-linear-gradient(to right,#E6E9ED 0 3px,transparent 3px 6px)}
 .nm7{font-size:16px;line-height:24px;font-weight:600;color:var(--n10)}
-.pc7.b .nm7{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pc7.a.sold .nm7{color:var(--n6)}
-.nmw8{width:100%;opacity:.6}
 .st7{display:flex;gap:4px;align-items:center;font-size:14px;line-height:20px}
 .st7 svg{width:16px;height:16px;flex:none}
 .st7.n{color:var(--amber-9)}
@@ -91,27 +86,58 @@ body.ver-v8 .pcs7{gap:16px}
 .r7{display:flex;gap:8px;align-items:center;justify-content:flex-end}
 .mkg7{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 .pc7.a .mkg7{justify-content:flex-end}
-.pc7.b .mkg7{width:100%}
 .mk7{background:var(--red-2);color:var(--red-8);font-size:12px;line-height:16px;font-weight:400;padding:2px 4px;border-radius:4px;white-space:nowrap}
 .mk7.s{background:var(--red-7);color:#fff}
-.bt8{display:flex;flex-direction:column;gap:4px;width:100%}
 .pr7{display:flex;gap:8px;align-items:center;white-space:nowrap}
 .pr7 b{font-size:16px;line-height:16px;font-weight:700;color:var(--n10)}
 .pr7 s{font-size:14px;line-height:14px;color:var(--n6)}
-.rb8{position:absolute;right:-5px;top:-11px;display:flex;flex-direction:column;align-items:flex-end}
-.rbt{display:flex;align-items:center;gap:6px;padding:2px 4px;border-radius:4px 4px 0 4px;background:var(--n3);color:var(--n10);font-size:12px;line-height:16px;font-weight:400;white-space:nowrap}
-.pc7.on .rbt{background:var(--cyan-8);color:#fff;font-weight:500}
-.sp8{width:1px;height:10px;display:flex;justify-content:center}
-.sp8::before{content:"";width:.5px;height:10px;background:currentColor;opacity:.5}
-.fd8{position:absolute;right:0;top:20px;width:4px;height:5px;background:var(--n4);clip-path:polygon(0 0,100% 0,0 100%)}
-.pc7.on .fd8{background:var(--cyan-10)}
 /* 兩欄（名稱都放得進半寬時）：A 的 MKT tag 一行、價格另起一行靠右；B 維持直排；同列等高、價格貼底 */
 .pcs7.two{display:grid;grid-template-columns:1fr 1fr}
 .pcs7.two .pc7{min-width:0;justify-content:flex-start}
 .pcs7.two .pc7.a .l7{flex:1}
 .pcs7.two .pc7.a .dl7{margin-top:auto}
 .pcs7.two .pc7.a .r7{flex-direction:column;align-items:flex-end;gap:4px}
-.pcs7.two .pc7.b .bt8{margin-top:auto}
+/* 新版B（v8，11/3 Figma 15687:39761）：相片牆整頁寬、標籤進資訊框、方案卡固定兩欄、編號橫排行程概覽 */
+body.ver-v8{--PR:500px}
+body.ver-v8 .plan-grid{gap:20px}
+.gal8{position:relative;display:flex;gap:6px;height:260px;border-radius:16px;overflow:hidden;margin-top:12px}
+.gal8>.tile,.gal8>.grp8{flex:1 1 0;min-width:0}
+.grp8{display:flex;gap:6px}
+.grp8>.col{flex:1 1 0;min-width:0}
+.gal8 .tile{position:relative;overflow:hidden;cursor:pointer;background:var(--n3);border-radius:0}
+.gal8 .tile img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.gal8 .tile:hover img{transform:scale(1.03)}
+.gal8 .col{display:flex;flex-direction:column;gap:6px}
+.gal8 .col>*{flex:1;min-height:0}
+.heart8{position:absolute;right:12px;top:12px;width:24px;height:24px;cursor:pointer;z-index:2}
+.heart8 svg{width:24px;height:24px}
+.info5.info8{padding:12px 16px;gap:12px 20px}
+.info8 .tags{width:100%}
+.info8 .tags .ttag{font-size:12px;line-height:16px;gap:2px;white-space:nowrap} /* .info5 span 的 16px 不要套到標籤 */
+.info8 .tags .ttag svg{width:14px;height:14px}
+body.ver-v8 .hl h4{font-size:16px;line-height:24px}
+body.ver-v8 .pr7 b{font-size:18px;line-height:18px}
+.ov8{background:var(--n1);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:20px;align-items:flex-start;margin:12px 0 24px}
+.ov8i{display:flex;flex-direction:column;gap:8px}
+.ov8i p{display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:24px}
+.ov8i svg{width:24px;height:24px;flex:none}
+.ov8i b{font-weight:600}
+.rt8{display:flex;flex-wrap:wrap;row-gap:8px}
+.u8{display:inline-flex;align-items:center;gap:4px}
+.u8+.u8{padding-left:4px}
+.u8.first{padding-left:0}
+.u8.first .cn8{display:none}
+.br8{flex-basis:100%;height:0}
+.cn8{width:20px;height:2px;flex:none;background:repeating-linear-gradient(to right,#ADE6EB 0 2px,transparent 2px 4px)}
+.s8{display:inline-flex;align-items:center;gap:8px;font-size:16px;line-height:24px;white-space:nowrap}
+.s8 em{font-style:normal;width:20px;height:20px;border-radius:50%;background:var(--cyan-8);color:#fff;font-size:14px;line-height:20px;font-weight:600;text-align:center;flex:none}
+.fee8{display:flex;flex-direction:column;gap:8px;padding-bottom:16px;border-bottom:1px solid var(--n3)}
+.fee8 h4{font-size:18px;line-height:26px;font-weight:600}
+.fl8{display:flex;flex-wrap:wrap;gap:8px 20px}
+.fl8+.fl8{margin-top:4px}
+.fl8 span{display:flex;align-items:flex-start;gap:4px;font-size:16px;line-height:24px}
+.fl8 svg{flex:none;margin-top:2px}
+.fl8 .y{color:var(--cyan-6)}.fl8 .n{color:var(--n6)}
 .ov7{background:var(--n1);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:16px;margin:16px 0}
 .ov7h{display:flex;gap:8px}
 .ov7h>span{flex:1 1 0;min-width:0;display:flex;align-items:center;gap:8px;font-size:16px;line-height:24px;font-weight:600;white-space:nowrap}
@@ -1697,7 +1723,7 @@ function setVer(v) {
 function render(keepScroll) {
   const y = scrollY; const wasMin = $('#vsw')?.classList.contains('min');
   document.body.className = 'ver-' + S.ver + (S.ver === 'v5-1' ? ' ver-v5' : S.ver === 'v6' ? ' ver-v5 ver-v5-1' : isV7() ? ' ver-v5 ver-v5-1 ver-v6 ver-v7' : '');
-  const fs = { online: fsOnline, v1: () => fsV1(), v2: fsV2, v3: fsV3, v4: () => fsV1(true), v5: () => fsV5(), 'v5-1': () => fsV5(), v6: () => fsV5(true), v7: () => fsV7(), v8: () => fsV7() }[S.ver]();
+  const fs = { online: fsOnline, v1: () => fsV1(), v2: fsV2, v3: fsV3, v4: () => fsV1(true), v5: () => fsV5(), 'v5-1': () => fsV5(), v6: () => fsV5(true), v7: () => fsV7(), v8: () => fsV8() }[S.ver]();
   $('#app').innerHTML = header() + fs + planSection() + sbar() + lower() + vsw();
   if (wasMin) $('#vsw').classList.add('min');
   renderPlan(); initCarousels(); clampHl(); checkTitle();
@@ -1819,7 +1845,7 @@ function renderDetail5(p) {
       ${isV7() ? '' : `${off ? `<div class="rt5"><span class="ptag sale">${ic('ic_deals_fill', 'ic16')}特別優惠</span></div>` : ''}
       <div class="pp5 price"><b>TWD ${fmt(p.price)}</b>${p.official ? `<s>TWD ${fmt(p.official)}</s>` : ''}</div>`}
     </div>
-    ${isV7() ? detailBody7(p, st) : S.ver === 'v6' ? detailBody6(p, st) : `<div class="ir5">
+    ${S.ver === 'v8' ? detailBody8(p, st) : isV7() ? detailBody7(p, st) : S.ver === 'v6' ? detailBody6(p, st) : `<div class="ir5">
       <div class="r5 tipable" data-tip="route">${'<i>' + ic('ic_roadMap_line') + '</i>'}<span>${st.length} 個景點（約 ${esc(p.duration)}）${ic('ic_info_line', 'ic20 inf')}</span></div>
       <div class="r5"><i>${ic('ic_tourFlag_line')}</i><span>${meetLbl(p)}${esc(p.gather.time || '')} ${esc(p.gather.dest || p.gather.name)}</span></div>
       <div class="r5"><i>${ic('ic_earth_line')}</i><span>${langs(p).replace(/ /g, '')}</span></div>
@@ -1828,6 +1854,7 @@ function renderDetail5(p) {
     ${acc5('sec5-sch', '行程介紹', isV6() ? timeline6(p) : `<div class="meta">行程時間：${esc(p.duration)}</div>${timeline(p)}`, schOpen)}
     ${modSections(p).map(([id, t, b]) => acc5(id, t, b)).join('')}
   </div>`;
+  rowCut8();
   // 行程概覽：景點/語言放不下左右各半（如 4 種語言）→ 語言換到下一行，避免爆版
   const oh = $('.ov7h'); if (oh && [...oh.children].some(c => c.scrollWidth > c.clientWidth + 1)) oh.classList.add('col');
   S.tab5Lock = null;
@@ -1874,8 +1901,9 @@ function detailBody6(p, st) {
 // ===================== 新版A/B（v7/v8，11/3 Figma 15642:11326 / 15619:7464）=====================
 // 首屏：標籤移到照片下方、公告移到亮點下方、行銷 banner 直接露 3 張
 function bannerStack7() {
-  const rest = banners.length - 3; // 直接露 3 張（11/3 她 3→2→又改回 3），其餘收在「更多活動」
-  return `<div class="bst7">${banners.slice(0, 3).map(b => `<div class="bnr"><img src="${img(b.imageUrl, 720)}" alt="${esc(b.title)}"></div>`).join('')}
+  const show = S.ver === 'v8' ? 1 : 3; // 新版A 露 3 張（11/3 她 3→2→又改回 3）；新版B 只露 1 張（她 11/3 晚上 2→1）
+  const rest = banners.length - show; // 其餘收在「更多活動」
+  return `<div class="bst7">${banners.slice(0, show).map(b => `<div class="bnr"><img src="${img(b.imageUrl, 720)}" alt="${esc(b.title)}"></div>`).join('')}
     ${rest > 0 ? `<div class="rel bm7"><a class="bmore7" data-act="bnr-open">更多活動</a><div class="menu bmenu" id="bmenu"><div class="bh"><span>全部活動</span><button data-act="bnr-close">${ic('ic_cross_line_semibold_lg', 'ic20')}</button></div>${banners.map(b => `<div class="bi"><img src="${img(b.imageUrl, 720)}" alt="${esc(b.title)}"></div>`).join('')}</div></div>` : ''}</div>`; // 選單以「更多活動」這行定位：下方放得下開下面，否則開上面
 }
 function fsV7() {
@@ -1886,6 +1914,16 @@ function fsV7() {
         ${tagRow()}${titleBox()}</div>
       ${ratingRow()}${infoRow5()}${hlV2()}${annBox('l2 ann7')}</div>
       <div class="right">${priceCard()}${bannerStack7()}</div></div></section>`;
+}
+// 新版B（v8，11/3 Figma 15687:39761；原本緞帶版B 已拿掉）：相片牆橫跨整頁 1200×260、切三欄（大圖｜大圖｜2×2 小圖）、標籤移進資訊框、方案卡固定兩欄、行程概覽改編號橫排
+function fsV8() {
+  return `<section class="fs wrap v5 v7 v8">${crumb()}
+    <div class="gal8">${tile(0, 720)}${tile(1, 720)}<div class="grp8"><div class="col">${tile(2, 360)}${tile(3, 360)}</div><div class="col">${tile(4, 360)}${travelerTile5()}</div></div>
+      <span class="heart8" data-act="wish">${ic(S.wish ? 'ic_wishListHeart_active_color' : 'ic_wishListHeart_default_color')}</span></div>
+    <div class="main"><div class="left">
+      <div style="display:flex;flex-direction:column;gap:8px">${titleBox()}${ratingRow()}</div>
+      ${infoRow5().replace('<div class="info5">', `<div class="info5 info8">${tagRow()}`)}${hlV2()}${annBox('l2 ann7')}</div>
+      <div class="right">${priceCard().replace(/<span class="heart"[\s\S]*?<\/span>/, "")}${bannerStack7()}</div></div></section>`; // 相片牆已有愛心，價格卡不放（11/3）
 }
 // 方案卡：A＝價格/MKT tag 在右；B＝價格/MKT tag 在名稱下、保證成團/免費取消做成右上緞帶
 function mktTags7(k) {
@@ -1898,23 +1936,25 @@ const price7 = k => `<div class="pr7 price"><b>TWD ${fmt(k.price)}</b>${k.offici
 function planCard7(k) {
   const na = S.date && !pkgAvail(S.date, k.id); const cd = na && (k.calendar || {})[S.date];
   const sold = !!(cd && !cd.ok) || !!k.allSold; const on = !sold && S.pkg === k.id;
-  const cls = `pc7 ${S.ver === 'v7' ? 'a' : 'b'} ${on ? 'on' : ''} ${sold ? 'dis sold' : ''}`;
+  const cls = `pc7 a ${on ? 'on' : ''} ${sold ? 'dis sold' : ''}`;
   const head = sold ? `<div class="st7 s">${ic('ic_calendarCross_line')}<span>已售罄</span></div>` : na ? `<div class="st7 n">${ic('ic_calendarCross_line')}<span>該日期無法訂購</span></div>` : '';
   const nm = `<p class="nm7">${esc(k.name)}</p>`;
-  if (sold) return `<button class="${cls}" data-act="pkg" data-id="${k.id}">${head}${S.ver === 'v8' ? `<div class="nmw8">${nm}</div>` : nm}</button>`;
+  if (sold) return `<button class="${cls}" data-act="pkg" data-id="${k.id}">${head}${nm}</button>`;
   const g = guaranteed(k), fc = freeCancel(k), d = cancelDays(k);
-  if (S.ver === 'v7') { // 11/3 改用 Option V1（Figma 15642:13574）：名稱/保證成團 → 虛線 → MKT tag＋價格靠右
+  if (isV7()) { // 11/3 改用 Option V1（新版B 也用同結構，固定兩欄）（Figma 15642:13574）：名稱/保證成團 → 虛線 → MKT tag＋價格靠右
     const terms = (g ? `<span>${ic('ic_shieldCheck_line')}保證成團</span>` : '') + (fc ? `<span>${ic('ic_currencyRelaod_line')}免費取消</span>` : '');
     return `<button class="${cls}" data-act="pkg" data-id="${k.id}">${head}<div class="l7"><div class="nb7">${nm}${terms ? `<div class="bt7">${terms}</div>` : ''}</div><i class="dl7"></i><div class="r7">${mktTags7(k)}${price7(k)}</div></div></button>`;
   }
-  const rb = [g ? '保證成團' : '', fc && d != null ? `${d} 天可免費取消` : ''].filter(Boolean);
-  return `<button class="${cls}" data-act="pkg" data-id="${k.id}">${rb.length ? `<span class="rb8"><span class="rbt">${rb.map(t => `<span>${t}</span>`).join('<i class="sp8"></i>')}</span><i class="fd8"></i></span>` : ''}${head}${nm}<div class="bt8">${mktTags7(k)}${price7(k)}</div></button>`;
+  return '';
 }
 // 方案名稱全部都不超過半寬卡片（扣掉左右內距 24＋框線 2）→ 卡片改左右兩欄排列（11/3 她要求試做）
 let mctx;
 function layout7() {
   const box = $('#pcard .pcs7'); if (!box) return;
   const names = [...box.querySelectorAll('.nm7')]; if (names.length < 2) return box.classList.remove('two');
+  if (S.ver === 'v8') { box.classList.add('two', 'force'); return; } // 新版B 方案卡固定兩欄
+  if (M.oneCol) { box.classList.remove('two', 'force'); return; } // meta.oneCol：強制上下單欄（排列對照用）
+  if (M.twoCol) { box.classList.add('two', 'force'); return; } // meta.twoCol：不論名稱長短都兩欄（11/3 韓國兩隻試做）
   mctx = mctx || document.createElement('canvas').getContext('2d');
   mctx.font = getComputedStyle(names[0]).font;
   const gap = parseFloat(getComputedStyle(box).columnGap) || 12;
@@ -1940,6 +1980,28 @@ function detailBody7(p, st) {
       <div class="fb6">${p.inc.map(x => `<span>${ic('ic_checkCircle_line', 'ic20 y')}${esc(x)}</span>`).join('')}</div>
       ${p.ninc.length ? `<div class="fb6">${p.ninc.map(x => `<span>${ic('ic_crossCircle_line', 'ic20 n')}${esc(x)}</span>`).join('')}</div>` : ''}
     </div>`;
+}
+// 新版B 行程概覽：三行資訊（景點數/語言/集合）＋編號景點橫排（同一列以短虛線相連，換列處不畫線）＋費用（無底框）
+function detailBody8(p, st) {
+  const g = p.steps[0];
+  const meet = !hasMeet(p) ? '' : multiPick(p) ? venues(p).map(v => `${esc(v.time || '')} ${esc(v.dest || v.loc)}`.trim()).join(' / ')
+    : `${esc(g.time || p.gather.time || '')} ${esc(g.dest || g.loc || p.gather.dest || p.gather.name || '')}`.trim();
+  return `<div class="ov8">
+      <div class="ov8i"><p>${ic('ic_roadMap_line')}<b>${st.length} 個景點 (約 ${esc(p.duration)})</b></p><p>${ic('ic_earth_line')}<b>${langs(p).replace(/ /g, '')}</b></p>${meet ? `<p>${ic('ic_tourFlag_line')}<b>${meetLbl(p)}${meet}</b></p>` : ''}</div>
+      ${st.length ? `<div class="rt8">${st.map((x, i) => `<span class="u8">${i ? '<i class="cn8"></i>' : ''}<span class="s8"><em>${i + 1}</em>${esc(x)}</span></span>`).join('')}</div>` : ''}
+      <a class="rt7a" data-act="tab5" data-id="sec5-sch">行程表詳情</a>
+    </div>
+    <div class="fee8"><h4>費用</h4>
+      <div class="fl8">${p.inc.map(x => `<span>${ic('ic_checkCircle_line', 'ic20 y')}${esc(x)}</span>`).join('')}</div>
+      ${p.ninc.length ? `<div class="fl8">${p.ninc.map(x => `<span>${ic('ic_crossCircle_line', 'ic20 n')}${esc(x)}</span>`).join('')}</div>` : ''}
+    </div>`;
+}
+// 換列處的短虛線藏起來（排版後判斷每個景點是不是該列第一個）
+function rowCut8() {
+  // 先在虛線都顯示時量出每列第一個景點，再在它前面強制換列（.br8）並藏掉它的虛線，避免藏線後又排回上一列
+  $$('.rt8').forEach(box => { box.querySelectorAll('.br8').forEach(b => b.remove()); const us = [...box.querySelectorAll('.u8')]; us.forEach(u => u.classList.remove('first'));
+    let top = null; const firsts = []; us.forEach(u => { const t = u.offsetTop; if (top !== null && t > top + 2) firsts.push(u); top = t; });
+    firsts.forEach(u => { const br = document.createElement('i'); br.className = 'br8'; box.insertBefore(br, u); u.classList.add('first'); }); });
 }
 // 詳情高度對齊左側方案卡（v5 系列）
 function syncPdetH() {
