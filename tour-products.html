@@ -197,7 +197,7 @@ body.ver-v10 .ann.ann10{padding:12px;min-height:66px;align-items:center}
 body.ver-v10 .pmenu{width:auto;left:-1px;right:-1px;top:calc(100% + 5px);padding:20px;box-shadow:0 0 24px rgba(38,50,56,.12)}
 body.ver-v10 .menu.up{top:auto;bottom:calc(100% + 4px)} /* 往上開要清掉 top，不然被上下夾扁 */
 body.ver-v10 .pmenu.up{bottom:calc(100% + 5px)}
-body.ver-v10 .pmenu .ph{margin-bottom:0}
+body.ver-v10 .pmenu .ph{position:sticky;top:-20px;z-index:3;background:#fff;margin:-20px -20px -12px;padding:20px 20px 12px;border-radius:12px 12px 0 0} /* 11/5 她：選單內容捲動時標題列固定（負 margin 抵銷內距，視覺間距不變） */
 body.ver-v10 .pmenu .ph button,body.ver-v10 .bmenu .bh button{width:24px;height:24px}
 body.ver-v10 .pmenu .ph button svg,body.ver-v10 .bmenu .bh button svg{width:24px;height:24px}
 body.ver-v10 .psec{display:flex;flex-direction:column;gap:8px}
