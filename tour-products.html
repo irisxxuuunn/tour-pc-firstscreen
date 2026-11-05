@@ -136,7 +136,8 @@ body.ver-v7 .f5.f9{gap:12px} /* 要蓋過新版A/B 共用的 .f5 gap 8：語言�
 .clr9:hover{color:var(--cyan-8)}
 body.ver-v8 .pdet{position:relative;top:auto} /* 新版B：方案詳情不吸頂，在詳情外滑動時整個方案區跟著頁面捲；詳情內滑動仍只捲詳情（11/4 她要求，新版A 不動） */
 /* ===== 新版C（v10，11/4 Figma 15746:66574）===== */
-body.ver-v10{--R:370px} /* 左欄 798＝兩張大圖寬（1200−370−32） */
+body.ver-v10{--R:378px} /* 11/5 新稿：右欄 378、左右間距 24，左欄仍 798＝兩張大圖寬 */
+body.ver-v10 .fs .main{gap:24px}
 .v10 .gal8{margin-top:12px}
 .tb10{display:flex;flex-direction:column;gap:8px}
 .th10{display:flex;gap:20px;align-items:flex-start}
@@ -182,6 +183,58 @@ body.ver-v10 .pdet::before{opacity:var(--n10o,1);transition:opacity .15s}
 .rt10 .s8{gap:6px}
 .rt10 .s8 em{width:18px;height:18px;border-radius:4px;background:var(--cyan-8);font-size:12px;line-height:18px;font-weight:500}
 .rt10 .cn8{background:repeating-linear-gradient(to right,#727272 0 1px,transparent 1px 4px,#727272 4px 5px)} /* Figma connector：灰 2px、點 2 間 3、頭尾半點 */
+/* ===== 新版C 11/5 改稿（Figma 15767:58822 / 15774:62988 / 15774:65498）===== */
+body.ver-v10 .fs .left>.tags{margin-bottom:0}
+body.ver-v10 .info10{gap:12px 20px}
+body.ver-v10 .it10{gap:12px 20px}
+body.ver-v10 .sep10{height:14px}
+body.ver-v10 .r10 .vcar,body.ver-v10 .r10 .marq{flex:1;min-width:0}
+body.ver-v10 .r10 .marq{-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 48px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 48px),transparent)} /* 左端 24px、右端 48px 淡出（11/5 她：首字被切掉的地方也要漸層） */
+body.ver-v10 .r10 .marq.paused .mt{animation-play-state:paused}
+body.ver-v10 .osb .pv{gap:2px}
+body.ver-v10 .ann.ann10{padding:12px;min-height:66px;align-items:center}
+/* 折扣與回饋選單：寬同價格卡 378、在卡片下方 4px、內距 20、間距 20、陰影 0 0 24 */
+body.ver-v10 .pmenu{width:auto;left:-1px;right:-1px;top:calc(100% + 5px);padding:20px;box-shadow:0 0 24px rgba(38,50,56,.12)}
+body.ver-v10 .menu.up{top:auto;bottom:calc(100% + 4px)} /* 往上開要清掉 top，不然被上下夾扁 */
+body.ver-v10 .pmenu.up{bottom:calc(100% + 5px)}
+body.ver-v10 .pmenu .ph{margin-bottom:0}
+body.ver-v10 .pmenu .ph button,body.ver-v10 .bmenu .bh button{width:24px;height:24px}
+body.ver-v10 .pmenu .ph button svg,body.ver-v10 .bmenu .bh button svg{width:24px;height:24px}
+body.ver-v10 .psec{display:flex;flex-direction:column;gap:8px}
+body.ver-v10 .psec h6{font-size:14px;line-height:20px;font-weight:600}
+body.ver-v10 .cpn .h{height:auto}
+body.ver-v10 .cpn .amt{font-family:inherit;font-size:24px;line-height:30px;font-weight:600}
+body.ver-v10 .cpn .get{height:auto;padding:6px 12px;border-radius:8px;line-height:20px;background:var(--cyan-7);border-color:var(--cyan-7)}
+body.ver-v10 .cpn .get.used{background:#fff;color:var(--cyan-8);border-color:var(--cyan-8)}
+body.ver-v10 .cpn .d,body.ver-v10 .cpn .t,body.ver-v10 .cpn .v{margin:0}
+body.ver-v10 .cpn{gap:8px}
+body.ver-v10 .cpn .d+.t{margin-top:-4px}body.ver-v10 .cpn .t+.v{margin-top:-4px} /* 條件/名稱/期限 間距 4 */
+body.ver-v10 .cpn .v.crit{color:var(--red-8)}
+/* 全部活動選單：378 寬、連結下方 4px、內距 20、banner 高 90 間距 12 */
+body.ver-v10 .bmenu{top:calc(100% + 4px);padding:20px;gap:20px;box-shadow:0 0 24px rgba(38,50,56,.12)}
+body.ver-v10 .bmenu .bh{padding:0}
+body.ver-v10 .bmenu .bis{display:flex;flex-direction:column;gap:12px}
+body.ver-v10 .bmenu .bi{height:90px;border-radius:12px}
+body.ver-v10 .bmenu .bi img{height:100%;object-fit:cover}
+/* 詳情：標籤→概覽→費用→分隔線→行程表 都 24（標題→標籤 20 不變）；景點改圓點 */
+body.ver-v10 .ov10{margin:24px 0}
+body.ver-v10 .fee8{padding-bottom:24px}
+body.ver-v10 #sec5-sch>.acc5h{padding-top:24px}
+.rt10 .u8{gap:2px}
+.rt10 .s8{gap:4px}
+.dt10{width:20px;height:24px;flex:none;position:relative}
+.dt10::after{content:"";position:absolute;left:6px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--cyan-7)}
+.rt10 .cn8{background:repeating-linear-gradient(to right,var(--n5) 0 1px,transparent 1px 4px,var(--n5) 4px 5px)} /* 灰 #BABBBE */
+/* 11/5 折扣與回饋：點數活動改上下排（標籤在上、說明在下，間距 6，內距 12/16） */
+body.ver-v10 .ptable .tr{flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;padding:12px 16px;min-height:52px}
+body.ver-v10 .ptable .tr>div,body.ver-v10 .ptable .tr>div:first-child{padding:0;min-height:0;width:auto}
+/* 11/5 新版C 拿掉詳情的吸頂頁籤 */
+body.ver-v10 .pdet .tabs5{display:none}
+/* 11/5 新版C 語言篩選（Figma 15797:8668）：膠囊高 36、左右 16、間距 8、換行 Z 字（列距 8）；與「清除篩選」12 */
+body.ver-v10 .f5.f10{gap:8px;row-gap:8px}
+.f10 .fchip{height:auto;min-height:36px;padding:7px 15px;white-space:normal;text-align:left;max-width:100%} /* 單一語言字多：膠囊撐滿一行後在膠囊內換行 */
+.f10 .clr10{margin-left:4px;font-size:14px;line-height:20px;font-weight:600;color:var(--n10);text-decoration:underline;text-underline-offset:3px;cursor:pointer;white-space:nowrap}
+.f10 .clr10:hover{color:var(--cyan-8)}
 .ov8{background:var(--n1);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:20px;align-items:flex-start;margin:12px 0 24px}
 .ov8i{display:flex;flex-direction:column;gap:8px}
 .ov8i p{display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:24px}
@@ -813,6 +866,34 @@ body.ver-v3 .lower .toc{margin-left:170px;width:280px}
 .kk-dialog__body::-webkit-scrollbar{width:8px}.kk-dialog__body::-webkit-scrollbar-thumb{background:var(--n4);border-radius:8px}
 .kk-dialog__footer{padding:16px 24px 24px;display:flex;justify-content:flex-end;gap:16px;width:100%;box-shadow:var(--elev-fixed)}
 .kk-dialog__footer .btn-pri{width:auto}
+/* ===== 新版C 查看詳情彈窗（Figma 15759:52727）：1200×820、圓角 16；標題 22；Tab 列；內容區左右 24、段落間距 40、段落標題 22 → 內容 24 ===== */
+.pdd10{height:min(820px,calc(100% - 160px));max-width:calc(100% - 80px)}
+.pdd10 .kk-dialog__close{width:32px;height:32px;border-radius:16px}
+.pdd10 .kk-dialog__close svg{width:20px;height:20px}
+.pdtabs10{display:flex;padding:0 12px;border-bottom:1px solid var(--n3);width:100%;overflow-x:auto;scrollbar-width:none;flex:none}
+.pdtabs10 a{padding:12px;font-size:16px;line-height:24px;color:var(--n10);white-space:nowrap;cursor:pointer;position:relative}
+.pdtabs10 a.on{color:var(--cyan-8);font-weight:600}
+.pdtabs10 a.on::after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:2px;border-radius:2px 2px 0 0;background:var(--cyan-6)}
+.pdtabs10 a:hover{color:var(--cyan-8)}
+.pdd10 .kk-dialog__body{padding:24px}
+.pds10+.pds10{margin-top:40px}
+.pds10 h3{font-size:22px;line-height:28px;font-weight:600;margin-bottom:24px}
+.pdh10{display:flex;flex-direction:column;gap:6px}
+.pdt10{display:flex;flex-wrap:wrap;gap:6px}
+.t10{font-size:12px;line-height:16px;padding:2px 4px;border-radius:4px;background:var(--n3);color:var(--n10);white-space:nowrap}
+.t10.s{background:var(--red-7);color:#fff}
+.t10.m{background:var(--red-2);color:var(--red-8)}
+.pdp10{display:flex;align-items:center;gap:8px}
+.pdp10 b{font-size:18px;line-height:18px;font-weight:700}
+.pdp10 s{font-size:14px;line-height:14px;color:var(--n6)}
+body.ver-v10 .ovd10{margin:16px 0 0} /* 價格→行程概覽 16 */
+.pf10{display:flex;flex-direction:column;gap:8px}
+.pf10 h5{font-size:16px;line-height:24px;font-weight:600}
+.pf10c{display:flex;gap:8px}
+.pf10c ul{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
+.pf10c li{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:20px}
+.pf10c svg{flex:none}
+.pf10c .y{color:var(--cyan-6)}.pf10c .n{color:var(--n6)}
 .dlg-hl ul{list-style:disc;padding-left:24px}
 .dlg-hl li{font-size:16px;line-height:26px;margin-bottom:8px}
 .dlg-hl h6{font-size:16px;line-height:24px;font-weight:600;color:var(--yellow-8);margin:4px 0 8px}
@@ -886,7 +967,14 @@ body.ver-v3 .lower .toc{margin-left:170px;width:280px}
 .vsw .more-v{color:var(--n7)}
 .vsw .psel{display:flex;gap:2px}
 .vsw .psel button.on{background:var(--cyan-8);color:#fff}
-.vsw .oldv{display:flex;gap:6px;padding-left:6px;border-left:1px solid rgba(0,0,0,.15)}
+.vsw .morew{position:relative;display:flex}
+.vsw .more-v{display:flex;align-items:center;gap:4px}
+.vsw .more-v svg{transition:transform .15s}
+.vsw .more-v.open svg{transform:rotate(180deg)}
+.vsw .more-v.on{background:var(--n10);color:#fff}
+/* 其他版本：往上長的小選單（11/5 她：工具列快爆開了） */
+.vsw .oldv{position:absolute;left:50%;bottom:calc(100% + 12px);transform:translateX(-50%);display:flex;gap:4px;padding:5px;border-radius:999px;background:#fff;box-shadow:0 4px 16px rgba(38,50,56,.16);animation:mInUp .14s ease-out}
+.vsw .oldv::after{content:"";position:absolute;left:50%;top:100%;margin-left:-6px;border:6px solid transparent;border-top-color:#fff}
 .vsw .mini .ec{display:none}.vsw.min .mini .eo{display:none}.vsw.min .mini .ec{display:flex}
 .vsw .mini span{display:flex}
 .vsw .mini{width:auto !important;padding:0 12px !important;color:var(--n7)}
@@ -1058,10 +1146,9 @@ body.ver-v3 .lower .toc{margin-left:170px;width:280px}
 <rect width="16" height="16" fill="white"/>
 </clipPath>
 </defs>
-</symbol><symbol id="ic_shieldCheck_line" viewBox="0 0 16 16">
-<g id="ic_shieldCheck_line-ShieldCheck">
-<path id="ic_shieldCheck_line-Vector" d="M13 1.95192H3C2.73478 1.95192 2.48043 2.05728 2.29289 2.24482C2.10536 2.43235 2 2.68671 2 2.95192V6.45192C2 9.74692 3.595 11.7438 4.93313 12.8388C6.37437 14.0175 7.80813 14.4175 7.87063 14.4344C7.95656 14.4578 8.04719 14.4578 8.13313 14.4344C8.19563 14.4175 9.6275 14.0175 11.0706 12.8388C12.405 11.7438 14 9.74692 14 6.45192V2.95192C14 2.68671 13.8946 2.43235 13.7071 2.24482C13.5196 2.05728 13.2652 1.95192 13 1.95192ZM13 6.45192C13 8.7688 12.1462 10.6494 10.4625 12.0407C9.72955 12.6442 8.89597 13.1139 8 13.4282C7.11576 13.1194 6.29247 12.6581 5.5675 12.065C3.86375 10.6713 3 8.78317 3 6.45192V2.95192H13V6.45192ZM5.14625 8.30567C5.05243 8.21185 4.99972 8.08461 4.99972 7.95192C4.99972 7.81924 5.05243 7.692 5.14625 7.59817C5.24007 7.50435 5.36732 7.45165 5.5 7.45165C5.63268 7.45165 5.75993 7.50435 5.85375 7.59817L7 8.74505L10.1462 5.59817C10.1927 5.55172 10.2479 5.51487 10.3086 5.48973C10.3692 5.46459 10.4343 5.45165 10.5 5.45165C10.5657 5.45165 10.6308 5.46459 10.6914 5.48973C10.7521 5.51487 10.8073 5.55172 10.8538 5.59817C10.9002 5.64463 10.9371 5.69978 10.9622 5.76048C10.9873 5.82117 11.0003 5.88623 11.0003 5.95192C11.0003 6.01762 10.9873 6.08268 10.9622 6.14337C10.9371 6.20407 10.9002 6.25922 10.8538 6.30567L7.35375 9.80567C7.30731 9.85216 7.25217 9.88904 7.19147 9.9142C7.13077 9.93937 7.06571 9.95232 7 9.95232C6.93429 9.95232 6.86923 9.93937 6.80853 9.9142C6.74783 9.88904 6.69269 9.85216 6.64625 9.80567L5.14625 8.30567Z" fill="currentColor"/>
-</g>
+</symbol><symbol id="ic_shieldCheck_line" viewBox="0 0 24 24">
+<path d="M15.2197 9.21973C15.5126 8.92683 15.9874 8.92683 16.2803 9.21973C16.5731 9.51262 16.5732 9.98739 16.2803 10.2803L11.0303 15.5303C10.7374 15.8231 10.2626 15.8231 9.96973 15.5303L7.71973 13.2803C7.42684 12.9874 7.42686 12.5126 7.71973 12.2197C8.01262 11.9268 8.48738 11.9268 8.78027 12.2197L10.5 13.9395L15.2197 9.21973Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.5 3.75C19.8978 3.75 20.2792 3.90815 20.5605 4.18945C20.8419 4.47076 21 4.85218 21 5.25V10.5C21 15.2673 18.8005 18.2793 16.5996 20.0801C15.5067 20.9743 14.4167 21.569 13.5996 21.9404C13.1902 22.1265 12.8466 22.2582 12.6025 22.3438C12.4806 22.3865 12.3833 22.4182 12.3145 22.4395C12.28 22.4501 12.2521 22.4582 12.2324 22.4639C12.2228 22.4667 12.2148 22.4691 12.209 22.4707C12.2063 22.4715 12.2021 22.4727 12.2021 22.4727H12.1992L12.1973 22.4736C12.0681 22.5088 11.9319 22.5088 11.8027 22.4736L11.8008 22.4727H11.7979C11.7979 22.4727 11.7937 22.4715 11.791 22.4707C11.7852 22.4691 11.7772 22.4667 11.7676 22.4639C11.7479 22.4582 11.72 22.4501 11.6855 22.4395C11.6167 22.4182 11.5194 22.3865 11.3975 22.3438C11.1534 22.2582 10.8098 22.1265 10.4004 21.9404C9.58327 21.569 8.4933 20.9743 7.40039 20.0801C5.19947 18.2793 3 15.2673 3 10.5V5.25C3 4.85217 3.15815 4.47076 3.43945 4.18945C3.72076 3.90815 4.10217 3.75 4.5 3.75H19.5ZM4.5 10.5C4.5 14.7327 6.42553 17.3457 8.34961 18.9199C9.3191 19.7131 10.2918 20.2435 11.0215 20.5752C11.3853 20.7406 11.6865 20.8551 11.8936 20.9277C11.9322 20.9413 11.9682 20.9522 12 20.9629C12.0318 20.9522 12.0678 20.9413 12.1064 20.9277C12.3135 20.8551 12.6147 20.7406 12.9785 20.5752C13.7082 20.2435 14.6809 19.7131 15.6504 18.9199C17.5745 17.3457 19.5 14.7327 19.5 10.5V5.25H4.5V10.5Z" fill="currentColor"/>
 </symbol><symbol id="ic_thumbsUpHl_color" viewBox="0 0 20 20">
 <g id="ic_thumbsUpHl_color-ic_thumbsUp_color">
 <g id="ic_thumbsUpHl_color-Vector">
@@ -1129,7 +1216,7 @@ const pkgById = id => PKGS.find(p => p.id === id);
 const MIN = D.salePrice.min_price, OFFICIAL = D.salePrice.official_price;
 // 商品專屬設定（data.json 的 meta）；沒有 meta 的（富士山 12319）沿用原本寫死的值
 const M = D.meta || {};
-const VERSIONS = (v => v.includes('v6') ? [...v, 'v7', 'v8', 'v10'] : v)(PROD_LIST ? (PROD_LIST.every(x => x.newOnly) ? ['v6'] : ['online', 'v6']) : (M.versions || ['online', 'v1', 'v2', 'v3', 'v4', 'v5', 'v5-1', 'v6']));
+const VERSIONS = (v => v.includes('v6') ? [...v, 'v7', 'v8', 'v10'] : v)(PROD_LIST ? (PROD_LIST.every(x => x.newOnly) ? ['v6'] : ['online', 'v1', 'v2', 'v3', 'v4', 'v5', 'v5-1', 'v6']) /* 11/5 她：tour-products 也要能切 v1~v5-1 */ : (M.versions || ['online', 'v1', 'v2', 'v3', 'v4', 'v5', 'v5-1', 'v6']));
 // freeDays：undefined＝舊資料（富士山）沿用 8 天；null＝這個方案沒有免費取消
 const cancelDays = p => p.freeDays === undefined ? 8 : p.freeDays;
 // 沒有免費取消時，改秀第一段手續費：「41 天前取消收取 5% 手續費」（照線上）
@@ -1148,7 +1235,7 @@ const MINI_REVIEWS = D.reviews.filter(r => r.rating === 5).slice(0, 3);
 
 // ===== state =====
 const S = {
-  ver: (location.hash.replace('#', '') || 'v7'),
+  ver: (location.hash.replace('#', '') || (VERSIONS.includes('v10') ? 'v10' : 'v7')), // 有新版C 的頁面預設開新版C（11/5 她）
   hook: 'A', // A: 連續好評/導遊好評  B: 單則旅客好評跑馬燈
   pkg: (PKGS.find(k => !k.allSold) || PKGS[0]).id, date: null, spec: {}, qty: {},
   wish: true, wishOl: false, claimed: {}, sort: 'KKDAY', tags: {}, helpful: {}, faqOpen: false,
@@ -1233,7 +1320,7 @@ function crumb(online) {
 const tagRow = (online) => `<div class="tags">${M.exclusive === false ? '' : `<span class="ttag" data-act="dev">KKday 專屬團${ic('ic_info_line')}</span>`}${(online && !M.trustedOnline) || M.trusted === false ? '' : `<span class="ttag trust" data-act="dev">${ic('ic_trustedPartner_abstract_color')}信賴商家${ic('ic_info_line')}</span>`}</div>`;
 // 新版刻意加長商品名，用來展示 V 展開（內容取自本商品真實資訊）
 const LONG_TITLE = M.longTitle !== undefined ? (M.longTitle || D.name) : EN ? D.name + ' | Chinese / English / Japanese Guide, Lake Kawaguchi Sightseeing Boat Appare, Mt. Fuji Panoramic Ropeway, Hikawa Clock Shop, Lawson Kawaguchiko & Optional Lobster Hot Pot Lunch' : D.name + '｜中文 / 英文 / 日文導覽・河口湖遊覽船天晴號・富士全景纜車・日川時計店・河口湖羅森便利商店・午餐可選龍蝦鍋';
-const titleBox = () => `<div class="title-box" id="titleBox"><h1 class="title">${esc(LONG_TITLE)}</h1><div class="title-more"><button data-act="title" aria-label="展開商品名稱">${ic('ic_arrowDown_line')}</button></div></div>`;
+const titleBox = () => `<div class="title-box ${S.titleOpen ? 'open' : ''}" id="titleBox"><h1 class="title">${esc(LONG_TITLE)}</h1><div class="title-more"><button data-act="title" aria-label="展開商品名稱">${ic('ic_arrowDown_line')}</button></div></div>`;
 
 function travelerCard(sm) {
   const p = tPhotos;
@@ -1263,8 +1350,11 @@ function ratingRow() {
 }
 // 商品名超過 2 行才顯示展開箭頭
 function checkTitle() {
-  const box = $('#titleBox'); if (!box || box.classList.contains('open')) return;
-  const t = $('.title', box); box.querySelector('.title-more').style.display = t.scrollHeight > t.clientHeight + 12 ? '' : 'none'; // 字形下緣會多 1–3px，超過半行才算溢出
+  const box = $('#titleBox'); if (!box) return;
+  const more = box.querySelector('.title-more');
+  if (box.classList.contains('open')) { more.style.display = ''; return; } // 展開時一定要有收合箭頭（11/5 她：展開後箭頭不見）
+  const t = $('.title', box); more.style.display = t.scrollHeight > t.clientHeight + 12 ? '' : 'none'; // 字形下緣會多 1–3px，超過半行才算溢出
+  if (!box._ro && window.ResizeObserver) { box._ro = new ResizeObserver(() => checkTitle()); box._ro.observe(t); } // 版面/字型晚到造成寬度改變時重算
 }
 // 亮點最多 3 行：渲染後由 clampHl() 逐條塞入，第 3 行結尾放「...更多」
 function hlBullets() { return '<ul class="hlc"></ul>'; }
@@ -1329,6 +1419,9 @@ function couponCard(c, i, ol) {
     <div class="v ${c.orderDateTimeCountdownText ? 'crit' : ''}">${esc(c.orderDateTimeCountdownText || c.orderDateTimeText)}</div></div>`;
 }
 function pointsMenu() {
+  if (S.ver === 'v10') return `<div class="ph"><h5>折扣與回饋</h5><button data-act="bnr-close">${ic('ic_cross_line', 'ic24')}</button></div>
+    <div class="psec"><h6>點數活動</h6><div class="ptable">${PTAGS().map(t => `<div class="tr"><div>${t.tag}</div><div>${t.desc}</div></div>`).join('')}</div></div>
+    <div class="psec" id="pmCoupons"><h6>折扣券</h6><div class="cpns">${coupons.map((c, i) => couponCard(c, i)).join('')}</div></div>`;
   return `<div><div class="ph"><h5>點數/活動</h5><button data-act="bnr-close">${ic('ic_cross_line_semibold_lg', 'ic20')}</button></div><div class="ptable">
       ${PTAGS().map(t => `<div class="tr"><div>${t.tag}</div><div>${t.desc}</div></div>`).join('')}
     </div></div>
@@ -1567,6 +1660,33 @@ function pdDialog() {
     $$('.pdtabs a', ov).forEach((a, i) => a.classList.toggle('on', i === cur));
   });
 }
+// 新版C「查看詳情」彈窗（Figma 15759:52727，只調整「費用資訊」以上的排版）：1200 寬、Tab 列、方案亮點（標籤＋價格＋行程概覽）→ 費用資訊 → 行程介紹 → 其他段落
+function pdDialog10() {
+  const p = pkgById(S.pkg); if (!p) return;
+  const st = stops5(p); const e = earliest(p.id); const off = offPct(p); const g = p.steps[0];
+  const meet = !hasMeet(p) ? '' : multiPick(p) ? venues(p).map(v => `${esc(v.time || '')} ${esc(v.dest || v.loc)}`.trim()).join(' / ')
+    : `${esc(g.time || p.gather.time || '')} ${esc(g.dest || g.loc || p.gather.dest || p.gather.name || '')}`.trim();
+  const cxl = cancelTxt(p, d => `${d} 天前可免費取消`);
+  const tags = [off ? `<span class="t10 s">${off}% OFF</span>` : '', ...(p.mkt || []).map(t => `<span class="t10 m">${esc(t)}</span>`),
+    `<span class="t10">${guaranteed(p) ? '保證成團' : confirmTxt(p)}</span>`, cxl ? `<span class="t10">${cxl}</span>` : '', `<span class="t10">最早可出發日：${e}</span>`].join('');
+  const hl = `<div class="pdh10"><div class="pdt10">${tags}</div><div class="pdp10 price"><b>TWD ${fmt(p.price)}</b>${p.official && p.official > p.price ? `<s>TWD ${fmt(p.official)}</s>` : ''}</div></div>
+    <div class="ov10 ovd10"><div class="ovi10"><p>${ic('ic_roadMap_line', 'ic20')}<span>${st.length} 個景點 (約 ${esc(p.duration)})</span></p><p>${ic('ic_earth_line', 'ic20')}<span>${langs(p).replace(/ /g, '')}導覽</span></p>${meet ? `<p>${ic('ic_tourFlag_line', 'ic20')}<span>${meetLbl(p)}${meet}</span></p>` : ''}</div>
+      ${st.length ? `<div class="rt8 rt10">${st.map((x, i) => `<span class="u8">${i ? '<i class="cn8"></i>' : ''}<span class="s8"><i class="dt10"></i>${esc(x)}</span></span>`).join('')}</div>` : ''}</div>`;
+  const fee = `<div class="pf10"><h5>費用包含/不包含</h5><div class="pf10c"><ul>${p.inc.map(x => `<li>${ic('ic_checkCircle_line', 'ic20 y')}${esc(x)}</li>`).join('')}</ul><ul>${p.ninc.map(x => `<li>${ic('ic_crossCircle_line', 'ic20 n')}${esc(x)}</li>`).join('')}</ul></div></div>`;
+  const secs = [['pd10-hl', '方案亮點', hl], ['pd10-fee', '費用資訊', fee], ['pd10-sch', '行程介紹', timeline6(p)],
+    ...modSections(p).filter(([id]) => !LOCKED_SECS.includes(id)).map(([id, t, b]) => ['pd10-' + id, t, b])]; // 側欄鎖住的段落（體驗地點/購買須知/旅遊條件/商家資訊）這裡也先不放
+  const ov = openDialog({ title: '方案詳情', size: 'xl', cls: 'pdd10', tabs: `<div class="pdtabs10">${secs.map(([id, t], i) => `<a class="${i ? '' : 'on'}" data-to="${id}">${t}</a>`).join('')}</div>`,
+    body: secs.map(([id, t, h], i) => `<section class="pds10" id="${id}">${i ? `<h3>${t}</h3>` : ''}${h}</section>`).join('') });
+  rowCut8();
+  const bd = $('.kk-dialog__body', ov); let lock = null;
+  $$('.pdtabs10 a', ov).forEach(a => a.onclick = () => { lock = a.dataset.to; $$('.pdtabs10 a', ov).forEach(x => x.classList.toggle('on', x === a)); bd.scrollTo({ top: $('#' + a.dataset.to, ov).offsetTop - bd.offsetTop - 24, behavior: 'smooth' }); });
+  bd.addEventListener('wheel', () => { lock = null; }, { passive: true });
+  bd.addEventListener('scroll', () => {
+    if (lock) return;
+    let cur = secs[0][0]; secs.forEach(([id]) => { if ($('#' + id, ov).offsetTop - bd.offsetTop - 40 <= bd.scrollTop) cur = id; });
+    $$('.pdtabs10 a', ov).forEach(a => a.classList.toggle('on', a.dataset.to === cur));
+  });
+}
 // gallery modal (官方照片 / 旅客照片)
 let G = { tab: 'off', f: 'all' };
 function openGallery(tab, startIdx) {
@@ -1701,7 +1821,7 @@ function closeMenus(except) {
 function placeMenu(m) {
   m.classList.remove('up'); m.style.bottom = ''; m.style.maxHeight = '';
   // 點數/活動選單以「點數折扣區塊」(.p2) 定位，不是整張價格卡（11/4 她要求）
-  const p2 = m.id === 'pmenu' ? m.parentElement.querySelector('.p2') : null;
+  const p2 = m.id === 'pmenu' && S.ver !== 'v10' ? m.parentElement.querySelector('.p2') : null; // 新版C 照 11/5 稿：選單在整張價格卡下方 4px
   const r = m.getBoundingClientRect(), anchor = (p2 || m.parentElement).getBoundingClientRect();
   const hdr = parseInt(getComputedStyle(document.body).getPropertyValue('--hdr'));
   const above = anchor.top - hdr - 16; // 往上開可用空間（不能鑽進 header 底下，頁面也捲不上去）
@@ -1726,7 +1846,7 @@ document.addEventListener('click', e => {
   if (!t) return;
   const a = t.dataset.act;
   switch (a) {
-    case 'title': $('#titleBox').classList.toggle('open'); break;
+    case 'title': S.titleOpen = $('#titleBox').classList.toggle('open'); checkTitle(); break; // 記住展開狀態，重繪首屏（切鉤子/收藏）不會被收回
     case 'gal-off': openGallery('off', +t.dataset.i); break;
     case 'gal-trav': openGallery('trav'); break;
     case 'to-review': scrollToEl('sec-review'); break;
@@ -1749,15 +1869,15 @@ document.addEventListener('click', e => {
     case 'reset': S.date = null; S.spec = {}; S.pkg = (PKGS.find(k => !k.allSold) || PKGS[0]).id; resetQty(); renderPlan(); break;
     case 'sch': { const s = $('#sch'); s.classList.toggle('close'); $('#sch .tl-wrap').style.display = s.classList.contains('close') ? 'none' : ''; } break;
     case 'dev': toast(EN ? 'Content in development' : '內容開發中'); break; // 首屏標籤等暫不開放
-    case 'pd-dialog': toast(EN ? 'Content in development' : '內容開發中'); break; // 「查看詳情」暫不開放
+    case 'pd-dialog': if (S.ver === 'v10') pdDialog10(); else toast(EN ? 'Content in development' : '內容開發中'); break; // 「查看詳情」只有新版C 開放（11/5 Figma 15759:52727），其他版本仍暫不開放
     case 'toc': scrollToEl(t.dataset.id); break;
     case 'sort': S.sort = t.dataset.k; $('#sec-review').innerHTML = reviewsHtml(); break;
     case 'rtag': S.tags[t.dataset.k] = !S.tags[t.dataset.k]; t.classList.toggle('on'); break;
     case 'helpful': S.helpful[t.dataset.r] = !S.helpful[t.dataset.r]; $('#sec-review').innerHTML = reviewsHtml(); break;
     case 'rv-img': { const r = D.reviews.find(x => String(x.id) === t.dataset.r); lightbox(r.images.map(m => m.url), +t.dataset.j); } break;
     case 'faq': S.faqOpen = !S.faqOpen; $('#sec-faq').outerHTML = (new DOMParser().parseFromString(lower(), 'text/html')).getElementById('sec-faq').outerHTML; break;
-    case 'ver': setVer(t.dataset.v); break;
-    case 'old-v': if (S.showOld || ['v1', 'v2', 'v3', 'v4', 'v5', 'v5-1'].includes(S.ver)) { S.showOld = false; if (S.ver !== 'online' && !isV6()) { setVer('v7'); break; } } else S.showOld = true; { const m = $('#vsw').classList.contains('min'); $('#vsw').outerHTML = vsw().split('\n')[0]; if (m) $('#vsw').classList.add('min'); } break;
+    case 'ver': S.showOld = false; setVer(t.dataset.v); break;
+    case 'old-v': S.showOld = !S.showOld; { const m = $('#vsw').classList.contains('min'); $('#vsw').outerHTML = vsw().split('\n')[0]; if (m) $('#vsw').classList.add('min'); } break;
     case 'langm': if (!e.target.closest('#langm')) $('#langm').classList.toggle('show'); break;
     case 'lang': { e.stopPropagation(); try { localStorage.setItem('kk_proto_lang', t.dataset.l); } catch (err) {} reloadWith({ lang: t.dataset.l }); } break;
     case 'prod': if (t.dataset.k !== CUR.key) reloadWith({ p: t.dataset.k }); break;
@@ -1806,19 +1926,25 @@ function onScroll() {
 }
 addEventListener('scroll', onScroll, { passive: true });
 addEventListener('scroll', () => notch10(), { passive: true });
+addEventListener('load', () => checkTitle());
+document.fonts && document.fonts.ready.then(() => checkTitle());
+document.fonts && document.fonts.ready.then(() => marq10());
+document.addEventListener('touchstart', e => { const m = e.target.closest('.r10 .marq'); if (m) m.classList.toggle('paused'); }, { passive: true });
 
 // ===== version switch =====
 function vsw() {
   // 主推 v6：只露出 線上版 / v6，舊版 v1–v5-1 收在「其他版本」裡（正在看舊版時自動展開）
   const OLD = [['v1', 'v1'], ['v2', 'v2'], ['v3', 'v3'], ['v4', 'v4'], ['v5', 'v5'], ['v5-1', 'v5-1']];
-  const showOld = S.showOld || OLD.some(([k]) => k === S.ver);
+  if (VERSIONS.includes('v10')) OLD.push(['v7', 'v6'], ['v8', 'v7']); // 11/5 她：新版A/B 收進「其他版本」，照編號叫 v6、v7；新版C 改叫「新版」
+  const showOld = !!S.showOld; // 11/5 她：其他版本改成往上長的小選單，不在工具列裡展開（工具列快爆了）
+  const curOld = OLD.find(([k]) => k === S.ver);
   const b = ([k, t]) => `<button class="${S.ver === k ? 'on' : ''}" data-act="ver" data-v="${k}">${t}</button>`;
   const vs = [['online', '線上版']];
   const sub = ['v1', 'v3', 'v4', 'v5', 'v5-1', 'v6', 'v7', 'v8', 'v9', 'v10'].includes(S.ver) ? `<span class="div"></span><div class="sub"><em class="gt">評論鉤子</em><button class="${S.hook === 'A' ? 'on' : ''}" data-act="hook" data-h="A">好評數據</button><button class="${S.hook === 'B' ? 'on' : ''}" data-act="hook" data-h="B">單則好評</button></div>` : '';
   const prod = PROD_LIST ? `<em class="gt">商品</em><span class="psel">${PROD_LIST.map(x => `<button class="${x.key === CUR.key ? 'on' : ''}" data-act="prod" data-k="${x.key}">${EN ? x.labelEn : x.label}</button>`).join('')}</span><span class="div"></span>` : '';
   if (VERSIONS.length === 1) return `<div class="vsw" id="vsw">${prod}${sub.replace('<span class="div"></span>', '')}<button class="mini" data-act="vsw-min"><span class="eo">隱藏</span><span class="ec">展開</span></button></div>
   <button class="totop" id="totop" data-act="top">${ic('ic_arrowUp_line')}</button>`;
-  return `<div class="vsw" id="vsw">${prod}<em class="gt">版本</em>${vs.filter(([k]) => VERSIONS.includes(k)).map(b).join('')}${VERSIONS.includes('v7') ? b(['v7', '新版A']) + b(['v8', '新版B']) + (VERSIONS.includes('v10') ? b(['v10', '新版C']) : '') : b(['v6', '新版'])}${VERSIONS.some(v => /^v[1-5]/.test(v)) ? `<button class="more-v" data-act="old-v">${showOld ? '收起 ‹' : '其他版本 ›'}</button>${showOld ? `<span class="oldv">${OLD.map(b).join('')}</span>` : ''}` : ''}${sub}<button class="mini" data-act="vsw-min"><span class="eo">隱藏</span><span class="ec">展開</span></button></div>
+  return `<div class="vsw" id="vsw">${prod}<em class="gt">版本</em>${vs.filter(([k]) => VERSIONS.includes(k)).map(b).join('')}${VERSIONS.includes('v10') ? b(['v10', '新版']) : VERSIONS.includes('v7') ? b(['v7', '新版A']) + b(['v8', '新版B']) : b(['v6', '新版'])}${VERSIONS.some(v => /^v[1-5]/.test(v)) || VERSIONS.includes('v10') ? `<span class="morew"><button class="more-v ${curOld ? 'on' : ''} ${showOld ? 'open' : ''}" data-act="old-v">${curOld ? `其他版本：${curOld[1]}` : '其他版本'}${ic('ic_arrowUp_line', 'ic16')}</button>${showOld ? `<span class="oldv">${OLD.filter(([k]) => VERSIONS.includes(k)).map(b).join('')}</span>` : ''}</span>` : ''}${sub}<button class="mini" data-act="vsw-min"><span class="eo">隱藏</span><span class="ec">展開</span></button></div>
   <button class="totop" id="totop" data-act="top">${ic('ic_arrowUp_line')}</button>`;
 }
 // 每個版本各自記住捲動位置：切到沒看過的版本從頂端開始，切回來回到上次位置
@@ -1857,6 +1983,10 @@ function pkgMatch5(k) {
 const stops5 = p => { const a = p.steps.filter(s => s.type === 'experience' && s.loc).map(s => s.loc); return a.length ? a : ((p.mods || {}).exps || []).map(x => x.name).filter(Boolean); };
 function filterRow5() {
   if (PKGS.length < 2) return ''; // 只有一個方案不用篩選（她要求）
+  if (S.ver === 'v10') { // 新版C 語言篩選（Figma 15797:8668，11/5）：單選、沒有「全部」，選了才出現「清除篩選」（接在最後一個語言後，放不下整個換行）；再點已選語言＝取消
+    const f = S.f5;
+    return `<div class="f5 f10">${ALL_LANGS.map(l => `<button class="fchip ${f.lang === l ? 'on' : ''}" data-act="f5" data-k="lang" data-v="${l}">${LANG[l] || l}</button>`).join('')}${f.lang ? '<a class="clr10" data-act="f5" data-k="all">清除篩選</a>' : ''}</div>`;
+  }
   if (S.ver === 'v7') { // 新版A 語言篩選（Figma 15725:20744 語言 v3，11/4）：沒有「全部」也沒有「清除篩選」，選中的膠囊帶 ✕，再點一次就取消、回到全部方案
     const f9 = S.f5;
     return `<div class="f5 f9"><div class="f5g">${ALL_LANGS.map(l => `<button class="fchip ${f9.lang === l ? 'on' : ''}" data-act="f5" data-k="lang" data-v="${l}">${LANG[l] || l}${f9.lang === l ? ic('ic_cross_line', 'ic16') : ''}</button>`).join('')}</div></div>`;
@@ -1891,7 +2021,7 @@ function infoRow5() {
   const langTxt = ALL_LANGS.map(l => LANG[l] || l).join('/');
   return `<div class="info5"><span>${ic('ic_location_line', 'ic20')}${DEPART}</span><span>${ic('ic_earth_line', 'ic20')}${langTxt}</span>
     ${anyCancel ? `<span>${ic('ic_currencyRelaod_line', 'ic20')}${allCancel ? '免費取消' : '含免費取消方案'}</span>` : ''}
-    ${PKGS.some(guaranteed) ? `<span>${ic('ic_checkCircle_line', 'ic20')}${PKGS.every(guaranteed) ? '保證成團' : '含保證成團方案'}</span>` : ''}</div>`;
+    ${PKGS.some(guaranteed) ? `<span>${ic('ic_checkCircle_line', 'ic20')}${PKGS.every(guaranteed) ? '保證成團' : '含保證成團方案'}</span>` : ''}</div>`; // 11/5 保證成團 icon＝圓形勾勾（她更正）
 }
 function fsV5(v6) {
   return `<section class="fs wrap v5">${crumb()}
@@ -1963,7 +2093,7 @@ function renderDetail5(p) {
       <div class="r5"><i>${ic('ic_earth_line')}</i><span>${langs(p).replace(/ /g, '')}</span></div>
       <div class="r5 tipable" data-tip="inc"><i>${ic('ic_currency_line')}</i><span>費用包含：${p.inc.map(esc).join(SEP)} ${ic('ic_info_line', 'ic20 inf')}</span></div>
     </div>`}
-    ${acc5('sec5-sch', '行程介紹', isV6() ? timeline6(p) : `<div class="meta">行程時間：${esc(p.duration)}</div>${timeline(p)}`, schOpen)}
+    ${acc5('sec5-sch', S.ver === 'v10' ? '行程表' : '行程介紹', isV6() ? timeline6(p) : `<div class="meta">行程時間：${esc(p.duration)}</div>${timeline(p)}`, schOpen)}
     ${modSections(p).map(([id, t, b]) => acc5(id, t, b)).join('')}
   </div>`;
   rowCut8();
@@ -2012,11 +2142,16 @@ function detailBody6(p, st) {
 }
 // ===================== 新版A/B（v7/v8，11/3 Figma 15642:11326 / 15619:7464）=====================
 // 首屏：標籤移到照片下方、公告移到亮點下方、行銷 banner 直接露 3 張
+function bmenuInner() {
+  const items = banners.map(b => `<div class="bi"><img src="${img(b.imageUrl, 720)}" alt="${esc(b.title)}"></div>`).join('');
+  if (S.ver === 'v10') return `<div class="menu bmenu" id="bmenu"><div class="bh"><span>全部活動</span><button data-act="bnr-close">${ic('ic_cross_line', 'ic24')}</button></div><div class="bis">${items}</div></div>`;
+  return `<div class="menu bmenu" id="bmenu"><div class="bh"><span>全部活動</span><button data-act="bnr-close">${ic('ic_cross_line_semibold_lg', 'ic20')}</button></div>${items}</div>`;
+}
 function bannerStack7() {
   const show = isB() ? 1 : 3; // 新版A 露 3 張（11/3 她 3→2→又改回 3）；新版B 只露 1 張（她 11/3 晚上 2→1）
   const rest = banners.length - show; // 其餘收在「更多活動」
   return `<div class="bst7">${banners.slice(0, show).map(b => `<div class="bnr"><img src="${img(b.imageUrl, 720)}" alt="${esc(b.title)}"></div>`).join('')}
-    ${rest > 0 ? `<div class="rel bm7"><a class="bmore7" data-act="bnr-open">更多活動${S.ver === 'v10' ? ` (${rest})` : ''}</a><div class="menu bmenu" id="bmenu"><div class="bh"><span>全部活動</span><button data-act="bnr-close">${ic('ic_cross_line_semibold_lg', 'ic20')}</button></div>${banners.map(b => `<div class="bi"><img src="${img(b.imageUrl, 720)}" alt="${esc(b.title)}"></div>`).join('')}</div></div>` : ''}</div>`; // 選單以「更多活動」這行定位：下方放得下開下面，否則開上面
+    ${rest > 0 ? `<div class="rel bm7"><a class="bmore7" data-act="bnr-open">${S.ver === 'v10' ? '全部活動' : '更多活動'}</a>${bmenuInner()}</div>` : ''}</div>`; // 選單以「更多活動」這行定位：下方放得下開下面，否則開上面
 }
 function fsV7() {
   return `<section class="fs wrap v5 v7">${crumb()}
@@ -2042,13 +2177,13 @@ function fsV10() {
   return `<section class="fs wrap v5 v7 v10">${crumb()}
     <div class="gal8">${tile(0, 720)}${tile(1, 720)}<div class="grp8"><div class="col">${tile(2, 360)}${tile(3, 360)}</div><div class="col">${tile(4, 360)}${travelerTile5()}</div></div></div>
     <div class="main"><div class="left">
-      <div class="tb10"><div class="th10">${titleBox()}<span class="heart10" data-act="wish">${ic(S.wish ? 'ic_wishListHeart_active_color' : 'ic_wishListHeart_default_color')}</span></div>${ratingRow10()}</div>
+      ${tagRow()}<div class="tb10"><div class="th10">${titleBox()}<span class="heart10" data-act="wish">${ic(S.wish ? 'ic_wishListHeart_active_color' : 'ic_wishListHeart_default_color')}</span></div>${ratingRow10()}</div>
       ${info10()}${hlV2().replace('<h4>亮點</h4>', `<h4>亮點${ic('ic_thumbsUpHl_color', 'ic20')}</h4>`)}${annBox('l2 ann10')}</div>
       <div class="right">${priceCard().replace(/<span class="heart"[\s\S]*?<\/span>/, '')}${bannerStack7()}</div></div></section>`;
 }
 function ratingRow10() {
   const hook = S.hook === 'A' ? hookA() : `<div class="marq"><div class="mt"><span>${esc(HOOK_REVIEW)}</span><span>${esc(HOOK_REVIEW)}</span></div></div>`;
-  return `<div class="rrow r10"><span class="rg10"><span class="badge">${RATING}</span><span class="lv">${RLV}</span><span class="cnt u" data-act="to-review">${RCNT}</span></span>
+  return `<div class="rrow r10"><span class="rg10"><span class="badge">${RATING}</span><span class="lv">${RLV}</span><span class="cnt u" data-act="to-review">(${RCNT})</span></span>
     <span class="ord10">${D.orderCount}個已訂購</span><span class="sep10"></span>${hook}</div>`;
 }
 // 資訊框：專屬團/信賴商家 ｜ 出發地・語言・取消・成團；後面四項放不下一行（掉行）時，中間的槓拿掉（fitInfo10）
@@ -2059,10 +2194,16 @@ function info10() {
     M.trusted === false ? '' : `<span class="tg10t" data-act="dev">${ic('ic_trustedPartner_abstract_color', 'ic20')}信賴商家${ic('ic_info_line', 'ic16 inf')}</span>`].join('');
   const items = [`<span>${ic('ic_location_line', 'ic20')}${DEPART.replace(/\//g, ' / ')}</span>`, `<span>${ic('ic_earth_line', 'ic20')}${langTxt}</span>`,
     anyCancel ? `<span>${ic('ic_currencyRelaod_line', 'ic20')}${allCancel ? '免費取消' : '含免費取消方案'}</span>` : '',
-    PKGS.some(guaranteed) ? `<span>${ic('ic_checkCircle_line', 'ic20')}${PKGS.every(guaranteed) ? '保證成團' : '含保證成團方案'}</span>` : ''].join('');
-  return `<div class="info10">${tags ? `<div class="tg10">${tags}</div><i class="sp10"></i>` : ''}<div class="it10">${items}</div></div>`;
+    PKGS.some(guaranteed) ? `<span>${ic('ic_checkCircle_line', 'ic20')}${PKGS.every(guaranteed) ? '保證成團' : '含保證成團方案'}</span>` : ''].join(''); // 11/5 保證成團 icon＝圓形勾勾（她更正，不是盾牌）
+  return `<div class="info10"><div class="it10">${items}</div></div>`; // 11/5 新稿：專屬團/信賴商家回到商品名上方的色塊標籤
+}
+function marq10() {
+  const mt = $('.r10 .marq .mt'); if (!mt) return;
+  const dist = mt.children[0].offsetWidth + 48;
+  mt.style.animationDuration = (dist / 20).toFixed(2) + 's';
 }
 function fitInfo10() {
+  marq10();
   const box = $('.info10'); if (!box) return;
   const sp = $('.sp10', box), it = $('.it10', box), tg = $('.tg10', box); if (!sp) return;
   box.classList.remove('wrap10');
@@ -2078,7 +2219,7 @@ function detailBody10(p, st) {
   return `<div class="ov10">
       <div class="ovh10"><h4>行程概覽</h4><a data-act="tab5" data-id="sec5-sch">行程表</a></div>
       <div class="ovi10"><p>${ic('ic_roadMap_line', 'ic20')}<span>${st.length} 個景點 (約 ${esc(p.duration)})</span></p><p>${ic('ic_earth_line', 'ic20')}<span>${langs(p).replace(/ /g, '')}導覽</span></p>${meet ? `<p>${ic('ic_tourFlag_line', 'ic20')}<span>${meetLbl(p)}${meet}</span></p>` : ''}</div>
-      ${st.length ? `<div class="rt8 rt10">${st.map((x, i) => `<span class="u8">${i ? '<i class="cn8"></i>' : ''}<span class="s8"><em>${i + 1}</em>${esc(x)}</span></span>`).join('')}</div>` : ''}
+      ${st.length ? `<div class="rt8 rt10">${st.map((x, i) => `<span class="u8">${i ? '<i class="cn8"></i>' : ''}<span class="s8"><i class="dt10"></i>${esc(x)}</span></span>`).join('')}</div>` : ''}
     </div>
     <div class="fee8"><h4>費用</h4>
       <div class="fl8">${p.inc.map(x => `<span>${ic('ic_checkCircle_line', 'ic20 y')}${esc(x)}</span>`).join('')}</div>
@@ -2112,7 +2253,7 @@ function planCard7(k) {
   if (sold) return `<button class="${cls}" data-act="pkg" data-id="${k.id}">${head}${nm}</button>`;
   const g = guaranteed(k), fc = freeCancel(k), d = cancelDays(k);
   if (isV7()) { // 11/3 改用 Option V1（新版B 也用同結構，固定兩欄）（Figma 15642:13574）：名稱/保證成團 → 虛線 → MKT tag＋價格靠右
-    const terms = (g ? `<span>${ic('ic_shieldCheck_line')}保證成團</span>` : '') + (fc ? `<span>${ic('ic_currencyRelaod_line')}免費取消</span>` : '');
+    const terms = (g ? `<span>${ic('ic_checkCircle_line')}保證成團</span>` : '') /* 11/5 她：保證成團 icon 是圓的（勾勾圈圈） */ + (fc ? `<span>${ic('ic_currencyRelaod_line')}免費取消</span>` : '');
     return `<button class="${cls}" data-act="pkg" data-id="${k.id}">${head}<div class="l7"><div class="nb7">${nm}${terms ? `<div class="bt7">${terms}</div>` : ''}</div><i class="dl7"></i><div class="r7">${mktTags7(k)}${price7(k)}</div></div></button>`;
   }
   return '';
@@ -2192,7 +2333,7 @@ function goTab5(id) {
   const bd = $('#bd5'); const sec = $('#' + id);
   sec.classList.add('open');
   S.tab5Lock = id; // 點 tab 後先鎖定高亮，使用者自己捲動才解除
-  const th = 48;
+  const th = S.ver === 'v10' ? 0 : 48; // 新版C 沒有頁籤（11/5 她：先拿掉）
   const target = sec.offsetTop - bd.offsetTop - th + 1;
   // 最後幾段內容太短捲不到 Tab 下方 → 底部補留白，讓該段能貼齊 Tab
   let pad = $('#bd5pad');
