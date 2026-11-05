@@ -1790,7 +1790,14 @@ function naAlert(id) {
     const a = e.target.closest('[data-a]');
     if (e.target === ov || (a && a.dataset.a === 'c')) return close();
     if (a && a.dataset.a === 'o') {
-      close(); S.date = null; setPkg(id); // 只選方案＋清日期；不要自動開日曆、不捲動（11/5 她）
+      close(); S.date = null; setPkg(id); // 只選方案＋清日期；不要自動開日曆（11/5 她）
+      // 日期列不在可視範圍 → 捲回「選擇方案」標題頂部（header 下 16），讓用戶直接重選日期（11/5 她）
+      requestAnimationFrame(() => {
+        const hdr = parseInt(getComputedStyle(document.body).getPropertyValue('--hdr')) || 60;
+        const dc = $('#dateChips'), hd = $('#pcard .hd'); if (!dc || !hd) return;
+        const r = dc.getBoundingClientRect();
+        if (r.top < hdr + 8 || r.bottom > innerHeight - 8) scrollTo({ top: scrollY + hd.getBoundingClientRect().top - hdr - 16, behavior: 'smooth' });
+      });
     }
   });
   document.body.appendChild(ov); document.body.style.overflow = 'hidden';
