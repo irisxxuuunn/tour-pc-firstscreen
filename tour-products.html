@@ -1352,7 +1352,7 @@ function ratingRow() {
 function checkTitle() {
   const box = $('#titleBox'); if (!box) return;
   const more = box.querySelector('.title-more');
-  if (box.classList.contains('open')) { more.style.display = ''; return; } // 展開時一定要有收合箭頭（11/5 她：展開後箭頭不見）
+  if (box.classList.contains('open')) { more.style.display = S.ver === 'v10' ? 'none' : ''; return; } // 新版規格（11/5 她）：商品名展開後箭頭消失、不能收合，重新整理才回到收起；其他版本仍可收合
   const t = $('.title', box); more.style.display = t.scrollHeight > t.clientHeight + 12 ? '' : 'none'; // 字形下緣會多 1–3px，超過半行才算溢出
   if (!box._ro && window.ResizeObserver) { box._ro = new ResizeObserver(() => checkTitle()); box._ro.observe(t); } // 版面/字型晚到造成寬度改變時重算
 }
