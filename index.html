@@ -2255,7 +2255,7 @@ function info10() {
 function marq10() {
   const mt = $('.r10 .marq .mt'); if (!mt) return;
   const dist = mt.children[0].offsetWidth + 48;
-  mt.style.animationDuration = (dist / 20).toFixed(2) + 's';
+  mt.style.animationDuration = (dist / 36).toFixed(2) + 's'; // 11/6 她：每秒 36px（原 20）
 }
 function fitInfo10() {
   marq10();
