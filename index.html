@@ -1811,7 +1811,7 @@ function naAlert(id) {
   document.body.appendChild(ov); document.body.style.overflow = 'hidden';
 }
 function setPkg(id) {
-  if (S.pkg === id) { if (isV7()) revealDetail(); return; }
+  if (S.pkg === id) { if (S.ver === 'v10') { S.pkg = null; S.spec = {}; renderPlan(); return; } if (isV7()) revealDetail(); return; } // 新版：再點已選方案＝取消選擇，右邊詳情變空狀態（11/6 她）
   if (S.date && !pkgAvail(S.date, id)) return naAlert(id); // 線上版也一樣先跳 dialog（11/5 她確認）
   S.pkg = id; S.spec = {}; resetQty();
   if (S.date && !pkgAvail(S.date, id)) S.date = null;
